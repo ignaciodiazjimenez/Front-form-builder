@@ -28,16 +28,17 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: var(--verde-brillante);
-  color: var(--blanco);
+  background-color: var(--blanco); /* Botones blancos */
+  color: var(--negro-suave); /* Texto negro */
   font-size: 1rem;
   text-align: center;
 }
 
 .boton:hover,
 .botonUsuario:hover {
-  background-color: var(--verde-oscuro);
-  box-shadow: 0 0 10px var(--verde-brillante);
+  background-color: var(--verde-brillante); /* Botón verde al hacer hover */
+  color: var(--blanco); /* Texto blanco */
+  box-shadow: 0 0 10px var(--verde-brillante); /* Efecto de iluminación */
 }
 
 .botonUsuario {
