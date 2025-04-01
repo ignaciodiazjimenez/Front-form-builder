@@ -1,0 +1,81 @@
+:root {
+  --verde-oscuro: #084C3B;
+  --verde-brillante: #21B46C;
+  --verde-medio: #A7CBA4;
+  --crema-claro: #FAF4E8;
+  --blanco: #FFFFFF;
+  --negro-suave: #1A1A1A;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--crema-claro);
+}
+
+.contenedor {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.tabla {
+  width: 100%;
+  max-width: 1000px;
+  background-color: var(--blanco);
+  border-collapse: collapse;
+  border: 2px solid var(--verde-medio);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--verde-medio);
+}
+
+th {
+  background-color: var(--crema-claro);
+  color: var(--verde-oscuro);
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--verde-brillante);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--verde-oscuro);
+  box-shadow: 0 0 10px var(--verde-brillante);
+}
+
+.noDisponible {
+  color: gray;
+  font-style: italic;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .tabla {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.6rem;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+  }
+}

@@ -2,30 +2,46 @@ import React, { useState } from 'react';
 import estilos from './inicioSesion.module.css';
 
 export default function InicioSesion() {
-  const [iluminado, setIluminado] = useState(false);
+  const [usuario, setUsuario] = useState('');
+  const [contrasena, setContrasena] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (usuario === 'root' && contrasena === 'root') {
+      window.location.href = '/admin'; // redirección directa
+    } else {
+      setError('Usuario o contraseña incorrectos');
+    }
+  };
 
   return (
     <div className={estilos.fondo}>
-      <div className={estilos.tituloGeneral}>
-        <h1>Constructor de Formularios Fersoft</h1>
-      </div>
+      <h1 className={estilos.titulo}>Constructor de Formularios Fersoft</h1>
+      <div className={estilos.contenedor}>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="usuario">Usuario</label>
+          <input
+            type="text"
+            id="usuario"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
+            placeholder="Introduce tu usuario"
+            required
+          />
 
-      <div
-        className={`${estilos.contenedor} ${iluminado ? estilos.iluminado : ''}`}
-        onMouseEnter={() => setIluminado(true)}
-        onMouseLeave={() => setIluminado(false)}
-      >
-        <h2 className={estilos.titulo}>Iniciar Sesión</h2>
-        <form className={estilos.formulario}>
-          <label>
-            Correo electrónico:
-            <input type="email" name="email" required />
-          </label>
+          <label htmlFor="contrasena">Contraseña</label>
+          <input
+            type="password"
+            id="contrasena"
+            value={contrasena}
+            onChange={(e) => setContrasena(e.target.value)}
+            placeholder="Introduce tu contraseña"
+            required
+          />
 
-          <label>
-            Contraseña:
-            <input type="password" name="password" required />
-          </label>
+          {error && <p className={estilos.error}>{error}</p>}
 
           <button type="submit">Entrar</button>
         </form>
