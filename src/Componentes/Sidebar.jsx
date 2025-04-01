@@ -14,7 +14,7 @@ export default function Sidebar({ usuario }) {
       <button onClick={() => (window.location.href = '/clientes')} className={estilos.boton}>
         Clientes
       </button>
-      <button onClick={() => (window.location.href = '/formularios')} className={estilos.boton}>
+      <button onClick={() => (window.location.href = '/panelformularios')} className={estilos.boton}>
         Formularios
       </button>
       <button onClick={() => (window.location.href = '/encuestas')} className={estilos.boton}>
