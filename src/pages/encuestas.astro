@@ -1,0 +1,18 @@
+---
+import PanelEcuestas from '../Componentes/PanelEcuestas.jsx';
+import '../Componentes/PanelEcuestas.module.css';
+import Sidebar from '../Componentes/Sidebar.jsx';  /* Agregar Sidebar */
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panel de Encuestas | Fersoft</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <Sidebar usuario="IgnacioFerSoft" />  <!-- Agregar Sidebar aquí -->
+      <PanelEcuestas client:load />
+    </div>
+  </body>
+</html>

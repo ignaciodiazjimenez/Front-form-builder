@@ -1,0 +1,55 @@
+/* src/Componentes/PanelEcuestas.module.css */
+
+:root {
+  --verde-oscuro: #084C3B;
+  --verde-brillante: #21B46C;
+  --verde-medio: #A7CBA4;
+  --crema-claro: #FAF4E8;
+  --blanco: #FFFFFF;
+  --negro-suave: #1A1A1A;
+}
+
+.wrapper {
+  display: flex;
+  background-color: var(--crema-claro);
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  color: var(--verde-oscuro);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 1fr para hacer que los botones ocupen un espacio proporcional */
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.boton {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--verde-oscuro);
+  transform: scale(1.05);
+}
