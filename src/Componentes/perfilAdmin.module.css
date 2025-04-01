@@ -1,0 +1,235 @@
+:root {
+    --verde-oscuro: #084C3B;
+    --verde-brillante: #21B46C;
+    --verde-medio: #A7CBA4;
+    --crema-claro: #FAF4E8;
+    --blanco: #FFFFFF;
+    --negro-suave: #1A1A1A;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contenedor {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--crema-claro);
+  }
+  
+  .sidebar {
+    background-color: var(--blanco);
+    border-right: 2px solid var(--verde-medio);
+    padding: 2rem 1.5rem;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 2rem;
+  }
+  
+  .perfilLabel {
+    font-size: 0.75rem;
+    color: var(--negro-suave);
+  }
+  
+  .nombreUsuario {
+    font-size: 1.2rem;
+    color: var(--verde-oscuro);
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menu li button {
+    width: 100%;
+    background-color: var(--crema-claro);
+    border: 1px solid var(--verde-medio);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    color: var(--verde-oscuro);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .menu li button:hover {
+    background-color: var(--verde-brillante);
+    color: var(--blanco);
+    box-shadow: 0 0 15px var(--verde-brillante);
+  }
+  
+  .zonaPrincipal {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  
+  .perfilBox {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde-medio);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .perfilBox h2 {
+    text-align: center;
+    color: var(--verde-oscuro);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  .datos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .datos div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--crema-claro);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--verde-medio);
+    flex-wrap: wrap;
+  }
+  
+  .datos span {
+    color: var(--negro-suave);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .datos button {
+    background-color: var(--verde-brillante);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .datos button:hover {
+    background-color: var(--verde-oscuro);
+    box-shadow: 0 0 15px var(--verde-brillante);
+  }
+  
+  .inputEditable {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid var(--verde-medio);
+    border-radius: 8px;
+    background-color: var(--crema-claro);
+    color: var(--negro-suave);
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .inputEditable:focus {
+    border-color: var(--verde-brillante);
+  }
+  
+  .filaConContrasena {
+    gap: 1rem;
+  }
+  
+  .contrasenaInput {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .ojo {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+  }
+  
+  .eliminar {
+    background-color: #cc3333;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .eliminar:hover {
+    background-color: #a30000;
+    box-shadow: 0 0 15px #cc3333;
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .contenedor {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 2px solid var(--verde-medio);
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .menu ul {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+  
+    .menu li button {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.6rem;
+    }
+  
+    .zonaPrincipal {
+      padding: 1rem;
+      min-height: auto;
+    }
+  
+    .perfilBox {
+      padding: 1.5rem;
+    }
+  
+    .datos div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .datos button {
+      width: 100%;
+    }
+  
+    .eliminar {
+      font-size: 1rem;
+    }
+  }
+  
