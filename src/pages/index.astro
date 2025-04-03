@@ -1,15 +1,8 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import InicioSesion from '../Componentes/InicioSesion.jsx';
-import '../Estilos/colores.css';
-
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Inicio de Sesión</title>
-  </head>
-  <body>
-    <InicioSesion client:load />
-  </body>
-</html>
+<Layout>
+  <InicioSesion client:load />
+</Layout>

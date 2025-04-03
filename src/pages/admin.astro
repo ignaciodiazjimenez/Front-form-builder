@@ -1,14 +1,8 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import PerfilAdmin from '../Componentes/PerfilAdmin.jsx';
-import '../Estilos/colores.css';
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Perfil del Administrador</title>
-  </head>
-  <body>
-    <PerfilAdmin client:load />
-  </body>
-</html>
+<Layout>
+  <PerfilAdmin client:load />
+</Layout>
