@@ -15,26 +15,34 @@ export default function Clientes() {
       <table className={estilos.tabla}>
         <thead>
           <tr>
-            <th>CLIENTES</th>
-            <th>FORMULARIOS</th>
-            <th>ENCUESTAS</th>
-            <th>DESCARGAR</th>
+            <th>👤 CLIENTES</th>
+            <th>📝 FORMULARIOS</th>
+            <th>📊 ENCUESTAS</th>
+            <th>📄 DESCARGAR</th>
           </tr>
         </thead>
         <tbody>
           {clientesData.map((cliente, index) => (
             <tr key={index}>
               <td>{cliente.nombre}</td>
-              <td><button>VER/EDITAR</button></td>
+              <td>
+                <button className={estilos.boton}>
+                  📝 VER/EDITAR
+                </button>
+              </td>
               <td>
                 {cliente.encuesta ? (
-                  <button>VER/EDITAR</button>
+                  <button className={estilos.boton}>
+                    📊 VER/EDITAR
+                  </button>
                 ) : (
-                  <span className={estilos.noDisponible}>NO DISPONIBLE</span>
+                  <span className={estilos.noDisponible}>❌ NO DISPONIBLE</span>
                 )}
               </td>
               <td>
-                <button>{cliente.encuesta ? 'FORM/ENCUESTA' : 'FORMULARIO'}</button>
+                <button className={estilos.boton}>
+                  📄 {cliente.encuesta ? 'FORM/ENCUESTA' : 'FORMULARIO'}
+                </button>
               </td>
             </tr>
           ))}
