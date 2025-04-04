@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import estilos from './sidebar.module.css';
+import '../Estilos/sidebar.css';
 
 export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
   const [usuario, setUsuario] = useState(usuarioProp);
@@ -17,24 +17,21 @@ export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
   };
 
   return (
-    <div className={estilos.sidebar}>
-      <button
-        className={estilos.botonUsuario}
-        onClick={() => navegar('/admin')}
-      >
+    <div className="sidebar">
+      <button className="botonUsuario" onClick={() => navegar('/admin')}>
         {usuario}
       </button>
 
-      <button className={estilos.boton} onClick={() => navegar('/clientes')}>
+      <button className="boton" onClick={() => navegar('/clientes')}>
         👥 Clientes
       </button>
 
-      <div className={estilos.menuGrupo}>
-        <button className={estilos.boton} onClick={toggleFormularios}>
+      <div className="menuGrupo">
+        <button className="boton" onClick={toggleFormularios}>
           📄 Formularios {menuAbierto ? '▼' : '▶'}
         </button>
         {menuAbierto && (
-          <div className={estilos.submenu}>
+          <div className="submenu">
             <button onClick={() => navegar('/formularios/crear')}>📝 Crear</button>
             <button onClick={() => navegar('/formularios/eliminar')}>🗑️ Eliminar</button>
             <button onClick={() => navegar('/formularios/actualizar')}>✏️ Actualizar</button>
@@ -43,11 +40,11 @@ export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
         )}
       </div>
 
-      <button onClick={() => navegar('/encuestas')} className={estilos.boton}>
+      <button onClick={() => navegar('/encuestas')} className="boton">
         📊 Encuestas
       </button>
 
-      <button onClick={() => navegar('/configuracion')} className={estilos.boton}>
+      <button onClick={() => navegar('/configuracion')} className="boton">
         ⚙️ Configuración
       </button>
     </div>

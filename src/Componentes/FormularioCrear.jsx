@@ -1,68 +1,75 @@
 import React, { useState } from 'react';
-import estilos from './FormularioCrear.module.css'; // ← CAMBIO
+import '../Estilos/paneles.css';
+import '../Estilos/botones.css';
+import '../Estilos/formularios.css';
 
 export default function FormularioCrear() {
   const [nombre, setNombre] = useState('');
-  const [campos, setCampos] = useState([{ id: Date.now(), label: '', tipo: 'text' }]);
+  const [campos, setCampos] = useState([{ nombre: '', tipo: 'texto' }]);
 
-  const agregarCampo = () => {
-    setCampos([...campos, { id: Date.now(), label: '', tipo: 'text' }]);
-  };
+  const añadirCampo = () =>
+    setCampos([...campos, { nombre: '', tipo: 'texto' }]);
 
-  const actualizarCampo = (id, campo, valor) => {
-    setCampos(campos.map(c => (c.id === id ? { ...c, [campo]: valor } : c)));
-  };
+  const eliminarCampo = (index) =>
+    setCampos(campos.filter((_, i) => i !== index));
 
-  const eliminarCampo = (id) => {
-    setCampos(campos.filter(c => c.id !== id));
+  const actualizarCampo = (index, campo, valor) => {
+    const nuevosCampos = [...campos];
+    nuevosCampos[index][campo] = valor;
+    setCampos(nuevosCampos);
   };
 
   const guardarFormulario = () => {
-    const datos = {
-      nombre,
-      campos,
-    };
-    console.log('Formulario creado:', datos);
-    alert('Formulario guardado (simulado en consola)');
+    console.log({ nombre, campos });
+    alert('Formulario guardado (simulado)');
   };
 
   return (
-    <div className={estilos.panel}>
-      <h2 className={estilos.titulo}>CREAR FORMULARIO</h2>
+    <div className="panel">
+      <h1 className="panel-titulo">CREAR FORMULARIO</h1>
 
       <input
-        className={estilos.input}
         type="text"
         placeholder="Nombre del formulario"
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
+        className="form-input"
       />
 
-      {campos.map((campo, index) => (
-        <div key={campo.id} className={estilos.fila}>
+      {campos.map((campo, i) => (
+        <div key={i} className="formulario-linea">
           <input
-            className={estilos.input}
             type="text"
-            placeholder={`Campo ${index + 1}`}
-            value={campo.label}
-            onChange={(e) => actualizarCampo(campo.id, 'label', e.target.value)}
+            placeholder={`Campo ${i + 1}`}
+            value={campo.nombre}
+            onChange={(e) => actualizarCampo(i, 'nombre', e.target.value)}
+            className="form-input"
           />
+
           <select
-            className={estilos.input}
             value={campo.tipo}
-            onChange={(e) => actualizarCampo(campo.id, 'tipo', e.target.value)}
+            onChange={(e) => actualizarCampo(i, 'tipo', e.target.value)}
+            className="form-input"
           >
-            <option value="text">Texto</option>
-            <option value="email">Email</option>
-            <option value="number">Número</option>
-            <option value="date">Fecha</option>
+            <option value="texto">Texto</option>
+            <option value="numero">Número</option>
+            <option value="fecha">Fecha</option>
           </select>
-          <button onClick={() => eliminarCampo(campo.id)} className={estilos.botonEliminar}>❌</button>
+
+          <button
+            onClick={() => eliminarCampo(i)}
+            className="boton rojo"
+            title="Eliminar"
+          >
+            ❌
+          </button>
         </div>
       ))}
 
-      <button onClick={agregarCampo} className={estilos.boton}>+ Añadir Campo</button>
-      <button onClick={guardarFormulario} className={estilos.boton}>💾 Guardar Formulario</button>
+      <div className="formulario-acciones">
+        <button onClick={añadirCampo} className="boton verde">+ Añadir Campo</button>
+        <button onClick={guardarFormulario} className="boton borde-verde">💾 Guardar Formulario</button>
+      </div>
     </div>
   );
 }

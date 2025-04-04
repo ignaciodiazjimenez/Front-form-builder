@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import estilos from './inicioSesion.module.css';
 
 export default function InicioSesion() {
   const [usuario, setUsuario] = useState('');
@@ -10,7 +9,7 @@ export default function InicioSesion() {
     e.preventDefault();
 
     if (usuario === 'root' && contrasena === 'root') {
-      localStorage.setItem('usuario', usuario); // ← Guarda el nombre
+      localStorage.setItem('usuario', usuario);
       window.location.href = '/admin';
     } else {
       setError('Usuario o contraseña incorrectos');
@@ -18,33 +17,35 @@ export default function InicioSesion() {
   };
 
   return (
-    <div className={estilos.fondo}>
-      <h1 className={estilos.titulo}>Constructor de Formularios Fersoft</h1>
-      <div className={estilos.contenedor}>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="usuario">Usuario</label>
+    <div className="formulario-fondo">
+      <h1 className="titulo">Constructor de Formularios Fersoft</h1>
+      <div className="formulario-contenedor">
+        <form onSubmit={handleSubmit} className="formulario">
+          <label htmlFor="usuario" className="formulario-label">Usuario</label>
           <input
             type="text"
             id="usuario"
+            className="formulario-input"
             value={usuario}
             onChange={(e) => setUsuario(e.target.value)}
             placeholder="Introduce tu usuario"
             required
           />
 
-          <label htmlFor="contrasena">Contraseña</label>
+          <label htmlFor="contrasena" className="formulario-label">Contraseña</label>
           <input
             type="password"
             id="contrasena"
+            className="formulario-input"
             value={contrasena}
             onChange={(e) => setContrasena(e.target.value)}
             placeholder="Introduce tu contraseña"
             required
           />
 
-          {error && <p className={estilos.error}>{error}</p>}
+          {error && <p className="formulario-error">{error}</p>}
 
-          <button type="submit">Entrar</button>
+          <button type="submit" className="boton verde">Entrar</button>
         </form>
       </div>
     </div>

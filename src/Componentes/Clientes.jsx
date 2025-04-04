@@ -1,5 +1,5 @@
 import React from 'react';
-import estilos from './clientes.module.css';
+import '../Estilos/tablas.css';
 
 const clientesData = [
   { nombre: 'IGNACIO', encuesta: false },
@@ -11,8 +11,8 @@ const clientesData = [
 
 export default function Clientes() {
   return (
-    <div className={estilos.contenedor}>
-      <table className={estilos.tabla}>
+    <div style={{ display: 'flex', justifyContent: 'center', padding: '2rem' }}>
+      <table className="tabla">
         <thead>
           <tr>
             <th>👤 CLIENTES</th>
@@ -26,21 +26,17 @@ export default function Clientes() {
             <tr key={index}>
               <td>{cliente.nombre}</td>
               <td>
-                <button className={estilos.boton}>
-                  📝 VER/EDITAR
-                </button>
+                <button>📝 VER/EDITAR</button>
               </td>
               <td>
                 {cliente.encuesta ? (
-                  <button className={estilos.boton}>
-                    📊 VER/EDITAR
-                  </button>
+                  <button>📊 VER/EDITAR</button>
                 ) : (
-                  <span className={estilos.noDisponible}>❌ NO DISPONIBLE</span>
+                  <span className="noDisponible">❌ NO DISPONIBLE</span>
                 )}
               </td>
               <td>
-                <button className={estilos.boton}>
+                <button>
                   📄 {cliente.encuesta ? 'FORM/ENCUESTA' : 'FORMULARIO'}
                 </button>
               </td>

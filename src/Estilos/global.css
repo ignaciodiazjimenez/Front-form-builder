@@ -1,0 +1,51 @@
+@import './colores.css';
+@import './sidebar.css';
+@import './botones.css';
+@import './formularios.css';
+@import './tablas.css';
+@import './paneles.css';
+
+/* Reset básico y tipografía global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background-color: var(--crema-claro);
+  overflow: auto; /* ← CAMBIO CLAVE para permitir que se vea el contenido */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para títulos */
+h1, h2, h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 1rem;
+}
+
+/* Estilo para textos normales */
+p, span, td, th {
+  color: var(--negro-suave);
+  font-size: 1rem;
+}
+
+/* Clases utilitarias */
+.texto-centrado {
+  text-align: center;
+}
+
+.fondo-blanco {
+  background-color: var(--blanco);
+}
+
+.sombra {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}

@@ -1,29 +1,4 @@
-:root {
-  --verde-oscuro: #084C3B;
-  --verde-brillante: #21B46C;
-  --verde-medio: #A7CBA4;
-  --crema-claro: #FAF4E8;
-  --blanco: #FFFFFF;
-  --negro-suave: #1A1A1A;
-}
-
-.layout {
-  display: flex;
-  min-height: 100vh;
-  background-color: var(--crema-claro);
-}
-
-.contenedor {
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  position: relative;         /* ✅ AÑADIDO */
-  z-index: 0;                 /* ✅ AÑADIDO */
-}
-
+/* src/Estilos/tablas.css */
 .tabla {
   width: 100%;
   max-width: 1000px;
@@ -33,8 +8,6 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  z-index: 0;                 /* ✅ AÑADIDO */
-  position: relative;         /* ✅ AÑADIDO */
 }
 
 th, td {
@@ -60,7 +33,7 @@ th {
   transition: all 0.3s ease;
 }
 
-button:hover {
+.tabla button:hover {
   background-color: var(--verde-oscuro);
   box-shadow: 0 0 10px var(--verde-brillante);
 }
@@ -79,7 +52,7 @@ button:hover {
     padding: 0.6rem;
   }
 
-  button {
+  .tabla button {
     padding: 0.4rem 0.8rem;
   }
 }

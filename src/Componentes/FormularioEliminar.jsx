@@ -1,38 +1,35 @@
 import React, { useState } from 'react';
-import estilos from './FormularioEliminar.module.css'; // ← CAMBIO
+import '../Estilos/formularios.css';
+
+const formulariosMock = [
+  'Formulario de contacto',
+  'Encuesta de satisfacción',
+  'Registro de usuarios',
+];
 
 export default function FormularioEliminar() {
-  const [formularios, setFormularios] = useState([
-    { id: 1, nombre: 'Formulario de contacto' },
-    { id: 2, nombre: 'Encuesta de satisfacción' },
-    { id: 3, nombre: 'Registro de usuarios' },
-  ]);
+  const [formularios, setFormularios] = useState(formulariosMock);
 
-  const eliminarFormulario = (id) => {
-    const confirmado = confirm('¿Estás seguro de que quieres eliminar este formulario?');
+  const eliminarFormulario = (nombre) => {
+    const confirmado = window.confirm(`¿Eliminar "${nombre}"?`);
     if (confirmado) {
-      const actualizados = formularios.filter(f => f.id !== id);
-      setFormularios(actualizados);
-      console.log('Formulario eliminado:', id);
+      setFormularios((prev) => prev.filter((f) => f !== nombre));
     }
   };
 
   return (
-    <div className={estilos.panel}>
-      <h2 className={estilos.titulo}>ELIMINAR FORMULARIO</h2>
-
-      {formularios.length === 0 ? (
-        <p>No hay formularios disponibles.</p>
-      ) : (
-        <ul className={estilos.lista}>
-          {formularios.map(f => (
-            <li key={f.id} className={estilos.item}>
-              <span>{f.nombre}</span>
-              <button className={estilos.botonEliminar} onClick={() => eliminarFormulario(f.id)}>❌ Eliminar</button>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="formulario-contenedor">
+      <h2 className="formulario-titulo">ELIMINAR FORMULARIO</h2>
+      <div className="formulario-lista">
+        {formularios.map((nombre, index) => (
+          <div key={index} className="formulario-item">
+            <span>{nombre}</span>
+            <button className="btn btn-eliminar" onClick={() => eliminarFormulario(nombre)}>
+              ❌ Eliminar
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

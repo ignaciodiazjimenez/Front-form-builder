@@ -1,16 +1,16 @@
 import React from 'react';
-import estilos from './header.module.css';
+import '../Estilos/header.css';
 
 export default function Header() {
   return (
-    <header className={estilos.header}>
-      <div className={estilos.logoContainer}>
+    <header className="header">
+      <div className="logoContainer">
         <img
           src="/logo-SVG-fersoft-completo.svg"
           alt="Logo Fersoft"
-          className={estilos.logo}
+          className="logo"
         />
-        <h1 className={estilos.titulo}>Constructor de Formularios de Fersoft</h1>
+        <h1 className="titulo">Constructor de Formularios de Fersoft</h1>
       </div>
     </header>
   );

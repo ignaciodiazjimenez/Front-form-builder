@@ -1,6 +1,7 @@
 ---
 import Header from '../Componentes/Header.jsx';
 import Sidebar from '../Componentes/Sidebar.jsx';
+import '../Estilos/global.css';
 ---
 
 <!doctype html>
@@ -11,60 +12,6 @@ import Sidebar from '../Componentes/Sidebar.jsx';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Constructor de Formularios de Fersoft</title>
-    <style>
-      :root {
-        --verde-oscuro: #084C3B;
-        --verde-brillante: #21B46C;
-        --verde-medio: #A7CBA4;
-        --crema-claro: #FAF4E8;
-        --blanco: #FFFFFF;
-        --negro-suave: #1A1A1A;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        font-family: sans-serif;
-        background-color: var(--crema-claro);
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      header {
-        flex-shrink: 0;
-      }
-
-      main {
-        display: flex;
-        flex-grow: 1;
-        overflow: visible;
-        min-height: 0;
-      }
-
-      .sidebar-container {
-        width: 300px;
-        background-color: var(--blanco);
-        border-right: 1px solid var(--verde-medio);
-        flex-shrink: 0;
-        overflow: visible; /* ✅ permitir ver el submenu */
-      }
-
-      .contenido {
-        flex-grow: 1;
-        padding: 2rem;
-        overflow-y: auto;
-      }
-    </style>
   </head>
   <body>
     <Header client:load />
