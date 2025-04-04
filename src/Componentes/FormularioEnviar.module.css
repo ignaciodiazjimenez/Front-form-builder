@@ -1,0 +1,63 @@
+:root {
+    --verde-oscuro: #084C3B;
+    --verde-brillante: #21B46C;
+    --verde-medio: #A7CBA4;
+    --crema-claro: #FAF4E8;
+    --blanco: #FFFFFF;
+    --negro-suave: #1A1A1A;
+  }
+  
+  .panel {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .fila {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .fila label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--verde-oscuro);
+  }
+  
+  .input {
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--verde-medio);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .boton {
+    background-color: var(--blanco);
+    border: 2px solid var(--verde-brillante);
+    color: var(--verde-oscuro);
+    font-weight: bold;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .boton:hover {
+    background-color: var(--verde-brillante);
+    color: var(--blanco);
+    box-shadow: 0 0 10px var(--verde-brillante);
+  }
+  

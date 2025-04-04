@@ -28,19 +28,51 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: var(--blanco); /* Botones blancos */
-  color: var(--negro-suave); /* Texto negro */
+  background-color: var(--blanco);
+  color: var(--negro-suave);
   font-size: 1rem;
   text-align: center;
 }
 
 .boton:hover,
 .botonUsuario:hover {
-  background-color: var(--verde-brillante); /* Botón verde al hacer hover */
-  color: var(--blanco); /* Texto blanco */
-  box-shadow: 0 0 10px var(--verde-brillante); /* Efecto de iluminación */
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  box-shadow: 0 0 10px var(--verde-brillante);
 }
 
 .botonUsuario {
   margin-bottom: 0.5rem;
+}
+
+/* NUEVOS ESTILOS PARA MENÚ DESPLEGABLE */
+
+.menuGrupo {
+  width: 100%;
+}
+
+.submenu {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.submenu button {
+  background-color: var(--blanco);
+  border: none;
+  text-align: left;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.submenu button:hover {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  border-left: 3px solid var(--verde-oscuro);
+  box-shadow: 0 0 8px var(--verde-brillante);
 }

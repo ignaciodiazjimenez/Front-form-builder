@@ -3,34 +3,52 @@ import estilos from './sidebar.module.css';
 
 export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
   const [usuario, setUsuario] = useState(usuarioProp);
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
-    const nombreGuardado = localStorage.getItem('usuario');
-    if (nombreGuardado) {
-      setUsuario(nombreGuardado);
-    }
+    const guardado = localStorage.getItem('usuario');
+    if (guardado) setUsuario(guardado);
   }, []);
+
+  const toggleFormularios = () => setMenuAbierto(!menuAbierto);
+
+  const navegar = (ruta) => {
+    window.location.href = ruta;
+  };
 
   return (
     <div className={estilos.sidebar}>
       <button
         className={estilos.botonUsuario}
-        onClick={() => (window.location.href = '/admin')}
+        onClick={() => navegar('/admin')}
       >
         {usuario}
       </button>
 
-      <button onClick={() => (window.location.href = '/clientes')} className={estilos.boton}>
-        Clientes
+      <button className={estilos.boton} onClick={() => navegar('/clientes')}>
+        👥 Clientes
       </button>
-      <button onClick={() => (window.location.href = '/panelformularios')} className={estilos.boton}>
-        Formularios
+
+      <div className={estilos.menuGrupo}>
+        <button className={estilos.boton} onClick={toggleFormularios}>
+          📄 Formularios {menuAbierto ? '▼' : '▶'}
+        </button>
+        {menuAbierto && (
+          <div className={estilos.submenu}>
+            <button onClick={() => navegar('/formularios/crear')}>📝 Crear</button>
+            <button onClick={() => navegar('/formularios/eliminar')}>🗑️ Eliminar</button>
+            <button onClick={() => navegar('/formularios/actualizar')}>✏️ Actualizar</button>
+            <button onClick={() => navegar('/formularios/enviar')}>📤 Enviar</button>
+          </div>
+        )}
+      </div>
+
+      <button onClick={() => navegar('/encuestas')} className={estilos.boton}>
+        📊 Encuestas
       </button>
-      <button onClick={() => (window.location.href = '/encuestas')} className={estilos.boton}>
-        Encuestas
-      </button>
-      <button onClick={() => (window.location.href = '/configuracion')} className={estilos.boton}>
-        Configuración
+
+      <button onClick={() => navegar('/configuracion')} className={estilos.boton}>
+        ⚙️ Configuración
       </button>
     </div>
   );
