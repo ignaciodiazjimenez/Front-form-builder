@@ -16,11 +16,12 @@
 .contenedor {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  position: relative;         /* ✅ AÑADIDO */
+  z-index: 0;                 /* ✅ AÑADIDO */
 }
 
 .tabla {
@@ -32,6 +33,8 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  z-index: 0;                 /* ✅ AÑADIDO */
+  position: relative;         /* ✅ AÑADIDO */
 }
 
 th, td {

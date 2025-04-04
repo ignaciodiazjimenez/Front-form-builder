@@ -47,7 +47,7 @@ import Sidebar from '../Componentes/Sidebar.jsx';
       main {
         display: flex;
         flex-grow: 1;
-        overflow: hidden;
+        overflow: visible;
         min-height: 0;
       }
 
@@ -55,8 +55,8 @@ import Sidebar from '../Componentes/Sidebar.jsx';
         width: 300px;
         background-color: var(--blanco);
         border-right: 1px solid var(--verde-medio);
-        overflow: hidden; /* ✅ aquí también */
         flex-shrink: 0;
+        overflow: visible; /* ✅ permitir ver el submenu */
       }
 
       .contenido {
