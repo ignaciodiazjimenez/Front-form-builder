@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from './Sidebar';
 import estilos from './clientes.module.css';
 
 const clientesData = [
@@ -12,39 +11,35 @@ const clientesData = [
 
 export default function Clientes() {
   return (
-    <div className={estilos.layout}>
-      <Sidebar usuario="IgnacioFerSoft" />
-
-      <div className={estilos.contenedor}>
-        <table className={estilos.tabla}>
-          <thead>
-            <tr>
-              <th>CLIENTES</th>
-              <th>FORMULARIOS</th>
-              <th>ENCUESTAS</th>
-              <th>DESCARGAR</th>
+    <div className={estilos.contenedor}>
+      <table className={estilos.tabla}>
+        <thead>
+          <tr>
+            <th>CLIENTES</th>
+            <th>FORMULARIOS</th>
+            <th>ENCUESTAS</th>
+            <th>DESCARGAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          {clientesData.map((cliente, index) => (
+            <tr key={index}>
+              <td>{cliente.nombre}</td>
+              <td><button>VER/EDITAR</button></td>
+              <td>
+                {cliente.encuesta ? (
+                  <button>VER/EDITAR</button>
+                ) : (
+                  <span className={estilos.noDisponible}>NO DISPONIBLE</span>
+                )}
+              </td>
+              <td>
+                <button>{cliente.encuesta ? 'FORM/ENCUESTA' : 'FORMULARIO'}</button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {clientesData.map((cliente, index) => (
-              <tr key={index}>
-                <td>{cliente.nombre}</td>
-                <td><button>VER/EDITAR</button></td>
-                <td>
-                  {cliente.encuesta ? (
-                    <button>VER/EDITAR</button>
-                  ) : (
-                    <span className={estilos.noDisponible}>NO DISPONIBLE</span>
-                  )}
-                </td>
-                <td>
-                  <button>{cliente.encuesta ? 'FORM/ENCUESTA' : 'FORMULARIO'}</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 ---
 import Header from '../Componentes/Header.jsx';
+import Sidebar from '../Componentes/Sidebar.jsx';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -11,17 +12,39 @@ import Header from '../Componentes/Header.jsx';
     <meta name="generator" content={Astro.generator} />
     <title>Constructor de Formularios de Fersoft</title>
     <style>
-      html,
-      body {
+      :root {
+        --verde-oscuro: #084C3B;
+        --verde-brillante: #21B46C;
+        --verde-medio: #A7CBA4;
+        --crema-claro: #FAF4E8;
+        --blanco: #FFFFFF;
+        --negro-suave: #1A1A1A;
+      }
+
+      html, body {
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
-        box-sizing: border-box;
         font-family: sans-serif;
+        background-color: var(--crema-claro);
+        box-sizing: border-box;
       }
 
       main {
+        display: flex;
+        min-height: calc(100vh - 80px);
+      }
+
+      .sidebar-container {
+        width: 200px;
+        flex-shrink: 0;
+        background-color: var(--blanco);
+        border-right: 1px solid var(--verde-medio);
+      }
+
+      .contenido {
+        flex-grow: 1;
         padding: 2rem;
       }
     </style>
@@ -29,7 +52,12 @@ import Header from '../Componentes/Header.jsx';
   <body>
     <Header client:load />
     <main>
-      <slot />
+      <div class="sidebar-container">
+        <Sidebar client:load />
+      </div>
+      <div class="contenido">
+        <slot />
+      </div>
     </main>
   </body>
 </html>

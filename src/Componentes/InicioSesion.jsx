@@ -10,7 +10,8 @@ export default function InicioSesion() {
     e.preventDefault();
 
     if (usuario === 'root' && contrasena === 'root') {
-      window.location.href = '/admin'; // redirección directa
+      localStorage.setItem('usuario', usuario); // ← Guarda el nombre
+      window.location.href = '/admin';
     } else {
       setError('Usuario o contraseña incorrectos');
     }

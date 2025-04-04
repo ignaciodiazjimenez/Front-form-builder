@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import estilos from './sidebar.module.css';
 
-export default function Sidebar({ usuario }) {
+export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
+  const [usuario, setUsuario] = useState(usuarioProp);
+
+  useEffect(() => {
+    const nombreGuardado = localStorage.getItem('usuario');
+    if (nombreGuardado) {
+      setUsuario(nombreGuardado);
+    }
+  }, []);
+
   return (
     <div className={estilos.sidebar}>
       <button
@@ -17,7 +26,7 @@ export default function Sidebar({ usuario }) {
       <button onClick={() => (window.location.href = '/panelformularios')} className={estilos.boton}>
         Formularios
       </button>
-      <button onClick={() => (window.location.href = '/PanelEcuestas')} className={estilos.boton}>
+      <button onClick={() => (window.location.href = '/encuestas')} className={estilos.boton}>
         Encuestas
       </button>
       <button onClick={() => (window.location.href = '/configuracion')} className={estilos.boton}>
