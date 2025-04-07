@@ -39,6 +39,9 @@ export default function FormularioEnviar() {
       <button className="boton enviar" onClick={enviarFormulario}>
         📤 Enviar
       </button>
+      <button className="boton borde-verde" onClick={() => window.location.href = '/admin'}>
+        Volver a Admin
+      </button>
     </div>
   );
 }

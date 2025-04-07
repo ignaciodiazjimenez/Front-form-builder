@@ -14,6 +14,9 @@ export default function FormularioActualizar() {
         <div key={i} className={`formulario-linea ${i === 0 ? 'seleccionado' : ''}`}>
           <span>{nombre}</span>
           <button className="boton editar">✏️ Editar</button>
+          <button className="boton borde-verde" onClick={() => window.location.href = '/admin'}>
+            Volver a Admin
+          </button>
         </div>
       ))}
     </div>

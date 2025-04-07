@@ -2,6 +2,7 @@
   padding: 2rem;
   background-color: var(--crema-claro);
   border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .panel-titulo {
@@ -10,8 +11,39 @@
   color: var(--verde-oscuro);
 }
 
-.botones button {
+.panel-campo {
+  margin-bottom: 1.5rem;
+}
+
+.panel-input {
   width: 100%;
-  max-width: 200px;
-  margin: 0.5rem auto;
+  padding: 0.8rem;
+  border: 1px solid var(--verde-medio);
+  border-radius: 8px;
+}
+
+.panel-boton {
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--verde-medio);
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel-boton:hover {
+  background-color: var(--verde-oscuro);
+  box-shadow: 0 0 10px var(--verde-brillante);
+}
+
+.panel-boton.rojo {
+  background-color: var(--negro-suave);
+  color: var(--blanco);
+}
+
+.panel-boton.rojo:hover {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
 }

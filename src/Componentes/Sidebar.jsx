@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../Estilos/sidebar.css';
+import '../Estilos/sidebar.css';  // Asegúrate de tener la ruta correcta de los estilos
 
 export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
   const [usuario, setUsuario] = useState(usuarioProp);

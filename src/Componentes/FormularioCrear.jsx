@@ -52,6 +52,9 @@ export default function FormularioCrear() {
       <div className="formulario-acciones">
         <button onClick={añadirCampo} className="boton verde">+ Añadir Campo</button>
         <button className="boton borde-verde">💾 Guardar Formulario</button>
+        <button className="boton borde-verde" onClick={() => window.location.href = '/admin'}>
+          Volver a Admin
+        </button>
       </div>
     </div>
   );

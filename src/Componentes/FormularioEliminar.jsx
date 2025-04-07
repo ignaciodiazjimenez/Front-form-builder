@@ -27,6 +27,9 @@ export default function FormularioEliminar() {
             <button className="btn btn-eliminar" onClick={() => eliminarFormulario(nombre)}>
               ❌ Eliminar
             </button>
+            <button className="boton borde-verde" onClick={() => window.location.href = '/admin'}>
+              Volver a Admin
+            </button>
           </div>
         ))}
       </div>

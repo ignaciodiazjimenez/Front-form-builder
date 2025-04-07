@@ -14,11 +14,16 @@ import '../Estilos/global.css';
     <title>Constructor de Formularios de Fersoft</title>
   </head>
   <body>
+    <!-- Incluyendo el Header -->
     <Header client:load />
-    <main>
+
+    <main class="main-container">
+      <!-- Sidebar izquierdo -->
       <div class="sidebar-container">
         <Sidebar client:load />
       </div>
+
+      <!-- Contenido central -->
       <div class="contenido">
         <slot />
       </div>
