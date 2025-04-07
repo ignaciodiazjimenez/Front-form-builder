@@ -1,5 +1,6 @@
+// src/Componentes/FormularioEliminar.jsx
 import React, { useState } from 'react';
-import estilos from './FormularioEliminar.module.css'; // ← CAMBIO
+import estilos from './FormularioEliminar.module.css';
 
 export default function FormularioEliminar() {
   const [formularios, setFormularios] = useState([
@@ -15,6 +16,10 @@ export default function FormularioEliminar() {
       setFormularios(actualizados);
       console.log('Formulario eliminado:', id);
     }
+  };
+
+  const volverAAdmin = () => {
+    window.location.href = '/admin';
   };
 
   return (
@@ -33,6 +38,7 @@ export default function FormularioEliminar() {
           ))}
         </ul>
       )}
+      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
     </div>
   );
 }

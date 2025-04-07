@@ -1,5 +1,6 @@
+// src/Componentes/FormularioActualizar.jsx
 import React, { useState } from 'react';
-import estilos from './FormularioActualizar.module.css'; // ← CAMBIO
+import estilos from './FormularioActualizar.module.css';
 
 export default function FormularioActualizar() {
   const [formularios, setFormularios] = useState([
@@ -26,6 +27,10 @@ export default function FormularioActualizar() {
     alert('Formulario actualizado (simulado)');
   };
 
+  const volverAAdmin = () => {
+    window.location.href = '/admin';
+  };
+
   return (
     <div className={estilos.panel}>
       <h2 className={estilos.titulo}>ACTUALIZAR FORMULARIO</h2>
@@ -49,6 +54,7 @@ export default function FormularioActualizar() {
           <button className={estilos.boton} onClick={actualizarFormulario}>💾 Guardar</button>
         </div>
       )}
+      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
     </div>
   );
 }

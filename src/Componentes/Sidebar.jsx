@@ -35,6 +35,7 @@ export default function Sidebar({ usuario: usuarioProp = 'Usuario' }) {
         </button>
         {menuAbierto && (
           <div className={estilos.submenu}>
+            <button onClick={() => navegar('/formularios/verformularios')}>👁️ Ver Formularios</button> {/* Nueva opción */}
             <button onClick={() => navegar('/formularios/crear')}>📝 Crear</button>
             <button onClick={() => navegar('/formularios/eliminar')}>🗑️ Eliminar</button>
             <button onClick={() => navegar('/formularios/actualizar')}>✏️ Actualizar</button>

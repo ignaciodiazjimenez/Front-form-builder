@@ -1,5 +1,6 @@
+// src/Componentes/FormularioEnviar.jsx
 import React, { useState } from 'react';
-import estilos from './FormularioEnviar.module.css'; // ← CAMBIO
+import estilos from './FormularioEnviar.module.css';
 
 export default function FormularioEnviar() {
   const [formularios, setFormularios] = useState([
@@ -19,6 +20,10 @@ export default function FormularioEnviar() {
     alert(`Formulario "${formularioSeleccionado.nombre}" enviado a ${destinatario}`);
     setDestinatario('');
     setFormularioSeleccionado(null);
+  };
+
+  const volverAAdmin = () => {
+    window.location.href = '/admin';
   };
 
   return (
@@ -55,6 +60,7 @@ export default function FormularioEnviar() {
       </div>
 
       <button className={estilos.boton} onClick={enviar}>📩 ENVIAR</button>
+      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
     </div>
   );
 }

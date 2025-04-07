@@ -1,5 +1,6 @@
+// src/Componentes/FormularioCrear.jsx
 import React, { useState } from 'react';
-import estilos from './FormularioCrear.module.css'; // ← CAMBIO
+import estilos from './FormularioCrear.module.css';
 
 export default function FormularioCrear() {
   const [nombre, setNombre] = useState('');
@@ -24,6 +25,10 @@ export default function FormularioCrear() {
     };
     console.log('Formulario creado:', datos);
     alert('Formulario guardado (simulado en consola)');
+  };
+
+  const volverAAdmin = () => {
+    window.location.href = '/admin';
   };
 
   return (
@@ -63,6 +68,7 @@ export default function FormularioCrear() {
 
       <button onClick={agregarCampo} className={estilos.boton}>+ Añadir Campo</button>
       <button onClick={guardarFormulario} className={estilos.boton}>💾 Guardar Formulario</button>
+      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
     </div>
   );
 }
