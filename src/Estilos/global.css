@@ -1,51 +1,106 @@
-@import './colores.css';
-@import './sidebar.css';
-@import './botones.css';
-@import './formularios.css';
-@import './tablas.css';
-@import './paneles.css';
+/* Definir la paleta de colores */
+:root {
+  --verde-oscuro: #084C3B;
+  --verde-brillante: #21B46C;
+  --verde-medio: #A7CBA4;
 
-/* Reset básico y tipografía global */
-* {
-  box-sizing: border-box;
+  --crema-claro: #FAF4E8;
+  --blanco: #FFFFFF;
+  --negro-suave: #1A1A1A;
+}
+
+/* Estilo general para la página */
+body {
+  background-color: var(--crema-claro);
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: sans-serif;
-  background-color: var(--crema-claro);
-  overflow: auto; /* ← CAMBIO CLAVE para permitir que se vea el contenido */
-}
-
-body {
+/* Estilo para el formulario de inicio de sesión */
+.inicio-sesion-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   flex-direction: column;
-}
-
-/* Estilo para títulos */
-h1, h2, h3 {
-  color: var(--verde-oscuro);
-  margin-bottom: 1rem;
-}
-
-/* Estilo para textos normales */
-p, span, td, th {
-  color: var(--negro-suave);
-  font-size: 1rem;
-}
-
-/* Clases utilitarias */
-.texto-centrado {
   text-align: center;
 }
 
-.fondo-blanco {
-  background-color: var(--blanco);
+.logo-container {
+  margin-bottom: 2rem;
 }
 
-.sombra {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.formulario-contenedor {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: var(--blanco);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-label {
+  font-size: 1rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.formulario-input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--verde-medio);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.formulario-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.boton {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Animación para suavizar los cambios */
+}
+
+/* Estilo para el botón de "Entrar" */
+.boton.verde {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  border: none;
+  box-shadow: 0 0 5px var(--verde-brillante);
+}
+
+.boton.verde:hover {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  box-shadow: 0 0 10px var(--verde-brillante); /* Efecto de resplandor */
+}
+
+.boton.verde:focus, .boton.verde:hover {
+  outline: none; /* Elimina el borde estándar */
+  box-shadow: 0 0 15px var(--verde-brillante); /* Resplandor más fuerte al hacer hover */
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../Estilos/global.css'; // Asegúrate de tener la paleta de colores en este archivo
 
 export default function InicioSesion() {
   const [usuario, setUsuario] = useState('');
@@ -17,7 +18,14 @@ export default function InicioSesion() {
   };
 
   return (
-    <div className="formulario-fondo">
+    <div className="inicio-sesion-container">
+      <div className="logo-container">
+        <img 
+          src="/logo-SVG-fersoft-completo.svg" 
+          alt="Logo Fersoft" 
+          className="logo" 
+        />
+      </div>
       <h1 className="titulo">Constructor de Formularios Fersoft</h1>
       <div className="formulario-contenedor">
         <form onSubmit={handleSubmit} className="formulario">

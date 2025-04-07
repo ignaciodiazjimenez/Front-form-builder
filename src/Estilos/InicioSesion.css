@@ -1,0 +1,47 @@
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logo-container img {
+    width: 150px;
+    margin-bottom: 2rem;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input {
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--verde-medio);
+    font-size: 1rem;
+  }
+  
+  .submit-button {
+    padding: 0.8rem;
+    background-color: var(--verde-brillante);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--verde-oscuro);
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+  }
+  

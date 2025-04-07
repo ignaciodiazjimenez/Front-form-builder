@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VistaClientes from '../Componentes/Clientes.jsx';
+import '../Estilos/tablas.css';
 ---
 
 <Layout>
-  <VistaClientes client:load />
+  <VistaClientes client:only="react" />
 </Layout>

@@ -1,27 +1,17 @@
-@import './colores.css';
-@import './botones.css';
-
 .panel {
-  background-color: var(--blanco);
-  border: 2px solid var(--verde-medio);
-  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 2rem auto;
-  max-width: 1000px;
-  box-sizing: border-box;
+  background-color: var(--crema-claro);
+  border-radius: 8px;
 }
 
-.panel h1,
-.panel h2 {
+.panel-titulo {
+  font-size: 2rem;
+  margin-bottom: 2rem;
   color: var(--verde-oscuro);
-  margin-bottom: 1.5rem;
-  text-align: center;
 }
 
-.panel .botones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+.botones button {
+  width: 100%;
+  max-width: 200px;
+  margin: 0.5rem auto;
 }
