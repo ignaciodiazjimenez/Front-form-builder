@@ -32,6 +32,17 @@ body, html {
   text-align: center;
 }
 
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 150px; /* Ajustar el tamaño del logo */
+  width: 100%;
+}
+
 .contenedor {
   background-color: var(--blanco);
   padding: 2rem;

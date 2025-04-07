@@ -19,6 +19,13 @@ export default function InicioSesion() {
 
   return (
     <div className={estilos.fondo}>
+      <div className={estilos.logoContainer}>
+        <img 
+          src="/logo-SVG-fersoft-completo.svg" 
+          alt="Logo Fersoft" 
+          className={estilos.logo} 
+        />
+      </div>
       <h1 className={estilos.titulo}>Constructor de Formularios Fersoft</h1>
       <div className={estilos.contenedor}>
         <form onSubmit={handleSubmit}>
