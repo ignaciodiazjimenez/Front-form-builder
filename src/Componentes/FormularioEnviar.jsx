@@ -22,10 +22,6 @@ export default function FormularioEnviar() {
     setFormularioSeleccionado(null);
   };
 
-  const volverAAdmin = () => {
-    window.location.href = '/admin';
-  };
-
   return (
     <div className={estilos.panel}>
       <h2 className={estilos.titulo}>ENVIAR FORMULARIO</h2>
@@ -60,7 +56,7 @@ export default function FormularioEnviar() {
       </div>
 
       <button className={estilos.boton} onClick={enviar}>📩 ENVIAR</button>
-      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
+      <button className={estilos.botonVolver} onClick={() => window.location.href = '/admin'}>🔙 Volver a Admin</button>
     </div>
   );
 }

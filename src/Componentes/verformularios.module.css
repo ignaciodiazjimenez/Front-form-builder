@@ -1,50 +1,68 @@
 /* src/Estilos/verformularios.module.css */
 
 .wrapper {
-    padding: 2rem;
-  }
-  
-  .titulo {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--verde-oscuro);
-    font-weight: bold;
-  }
-  
-  .tabla {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
-  .tabla th, .tabla td {
-    padding: 1rem;
-    border: 1px solid var(--verde-medio);
-    text-align: center;
-  }
-  
-  .tabla th {
-    background-color: var(--verde-brillante);
-    color: var(--blanco);
-  }
-  
-  .tabla tr:nth-child(even) {
-    background-color: var(--crema-claro);
-  }
-  
-  .botonVer, .botonEditar {
-    background-color: var(--verde-brillante);
-    color: var(--blanco);
-    border: none;
-    padding: 0.6rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 1rem;
-  }
-  
-  .botonVer:hover, .botonEditar:hover {
-    background-color: var(--verde-oscuro);
-    box-shadow: 0 0 8px var(--verde-brillante);
-  }
-  
+  padding: 2rem;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabla th, .tabla td {
+  padding: 1rem;
+  border: 1px solid var(--verde-medio);
+  text-align: center;
+}
+
+.tabla th {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+}
+
+.tabla tr:nth-child(even) {
+  background-color: var(--crema-claro);
+}
+
+.botonVer, .botonEditar {
+  background-color: var(--verde-brillante);
+  color: var(--blanco);
+  border: none;
+  padding: 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.botonVer:hover, .botonEditar:hover {
+  background-color: var(--verde-oscuro);
+  box-shadow: 0 0 8px var(--verde-brillante);
+}
+
+/* Estilos para el botón "Volver a Admin" */
+.botonVolver {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.botonVolver:hover {
+  background-color: var(--verde-brillante);
+  box-shadow: 0 0 10px var(--verde-brillante);
+}

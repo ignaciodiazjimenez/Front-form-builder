@@ -27,10 +27,6 @@ export default function FormularioCrear() {
     alert('Formulario guardado (simulado en consola)');
   };
 
-  const volverAAdmin = () => {
-    window.location.href = '/admin';
-  };
-
   return (
     <div className={estilos.panel}>
       <h2 className={estilos.titulo}>CREAR FORMULARIO</h2>
@@ -68,7 +64,7 @@ export default function FormularioCrear() {
 
       <button onClick={agregarCampo} className={estilos.boton}>+ Añadir Campo</button>
       <button onClick={guardarFormulario} className={estilos.boton}>💾 Guardar Formulario</button>
-      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
+      <button className={estilos.botonVolver} onClick={() => window.location.href = '/admin'}>🔙 Volver a Admin</button>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function VerFormularios() {
           ))}
         </tbody>
       </table>
-      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
+      <button className={estilos.botonVolver} onClick={volverAAdmin}>🔙 Volver a Admin</button>
     </div>
   );
 }

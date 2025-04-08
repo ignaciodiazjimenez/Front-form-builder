@@ -77,4 +77,21 @@
     color: var(--blanco);
     box-shadow: 0 0 10px var(--verde-brillante);
   }
-  
+  /* src/Estilos/FormularioActualizar.module.css */
+
+.botonVolver {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 2rem;
+}
+
+.botonVolver:hover {
+  background-color: var(--verde-brillante);
+  box-shadow: 0 0 10px var(--verde-brillante);
+}

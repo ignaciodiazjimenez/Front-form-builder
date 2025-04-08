@@ -27,10 +27,6 @@ export default function FormularioActualizar() {
     alert('Formulario actualizado (simulado)');
   };
 
-  const volverAAdmin = () => {
-    window.location.href = '/admin';
-  };
-
   return (
     <div className={estilos.panel}>
       <h2 className={estilos.titulo}>ACTUALIZAR FORMULARIO</h2>
@@ -54,7 +50,7 @@ export default function FormularioActualizar() {
           <button className={estilos.boton} onClick={actualizarFormulario}>💾 Guardar</button>
         </div>
       )}
-      <button className={estilos.botonVolver} onClick={volverAAdmin}>Volver a Admin</button>
+      <button className={estilos.botonVolver} onClick={() => window.location.href = '/admin'}>🔙 Volver a Admin</button>
     </div>
   );
 }
